@@ -1,0 +1,56 @@
+{
+  "name": "markdown-it-table-wrap",
+  "description": "markdown-it plugin which wraps table into div and add class for custom styling.",
+  "version": "1.0.0",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/esm/index.d.ts"
+    }
+  },
+  "types": "dist/esm/index.d.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "LICENSE",
+    "dist/",
+    "runkitExample.js"
+  ],
+  "scripts": {
+    "build": "rm -rf dist/* && tsc -p tsconfig-esm.json && tsc -p tsconfig-cjs.json && bash fixup",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "test": "npm run test:table && npm run test:tsd",
+    "test:table": "mocha test/table.js",
+    "test:tsd": "npx tsd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trunkcode/markdown-it-table-wrap.git"
+  },
+  "keywords": [
+    "markdown-it",
+    "plugin",
+    "table",
+    "table-wrap"
+  ],
+  "author": "TrunkCode <support@trunkcode.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trunkcode/markdown-it-table-wrap/issues"
+  },
+  "homepage": "https://github.com/trunkcode/markdown-it-table-wrap#readme",
+  "runkitExampleFilename": "runkitExample.js",
+  "devDependencies": {
+    "@types/markdown-it": "14.1.1",
+    "@types/node": "20.12.8",
+    "@typescript-eslint/eslint-plugin": "7.8.0",
+    "@typescript-eslint/parser": "7.8.0",
+    "eslint": "8.56.0",
+    "markdown-it": "14.1.0",
+    "mocha": "10.4.0",
+    "tsd": "0.31.0",
+    "typescript": "5.4.5"
+  }
+}
